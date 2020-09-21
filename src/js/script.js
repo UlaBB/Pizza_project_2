@@ -100,24 +100,22 @@
         console.log('clicked');
 
         /* prevent default action for event */
-
         event.preventDefault();
 
         /* toggle active class on element of thisProduct */
-
-        thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
+        thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);// dodanie lub oderbanie klasy active
 
         /* find all active products */
 
         const activeProducts = document.querySelectorAll(select.all.menuProducts);
-        console.log(activeProducts);
+        console.log('activeProduct:', activeProducts);
 
         /* START LOOP: for each active product */
         for (let activeProduct of activeProducts) {
 
 
           /* START: if the active product isn't the element of thisProduct */
-          if (activeProduct != this.Product.element) {
+          if (activeProduct != thisProduct.element) {
 
             /* remove class active for the active product */
             activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
